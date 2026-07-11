@@ -1,30 +1,22 @@
-import {createContext, useState} from "react";
+import { createContext, useState } from "react";
 
-// creare context: createContext()
+// 1. Create context
+export const ProductContext = createContext();  
 
-export const productContext = createContext();  // empty tank
+// 2. Provider component
+export const ProductProvider = ({ children }) => {
+  // Example response (could be fetched from API)
+  const response = [
+    { id: 1, productname: "black Glasses", qty: 2 },
+    { id: 2, productname: "yellow Jean", qty: 5 }
+  ];
 
-//2. provider : a supercomponent
+  // Initialize state with response
+  const [products, setProducts] = useState(response);
 
-export const ProductProvider = ({children}) => {
-    //send a request to an api endpoint that returns all products inside inventory db table
-    var response = [
-        {
-            id: 1,
-            productname: "black Glassess",
-            qty: 2
-        },
-        {
-            id: 2,
-            productname: "yellow Jean",
-            qty: 5
-        }
-    ]
-    const [products, setProducts] = useState()
-
-    return (
-        <productContext.provider value={{products,setProducts}}>  
-            {children};
-        </productContext.provider>
-    )
-}
+  return (
+    <ProductContext.Provider value={{ products, setProducts }}>
+      {children}
+    </ProductContext.Provider>
+  );
+};
