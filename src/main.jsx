@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client'
 import './assets/meal.css'
 // import Meal from './Meal'
 import Invento from './Invento'
+import { ProductProvider } from './ProductContext2'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
