@@ -4,7 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/meal.css'
 // import Meal from './Meal'
 import Invento from './Invento'
-import { ProductProvider } from './context/ProductContext2'
+// import { ProductProvider } from './context/ProductContext2'
+import ProductProvider from "./context/ProductContext2";
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
